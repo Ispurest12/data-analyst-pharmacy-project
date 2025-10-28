@@ -1,8 +1,8 @@
--- We need to change the varchar(100) to TEXT because data's Mockaroo has poor information
+-- We need to change the varchar(100) to TEXT because data's Mockaroo has poor information with more than 100 char characters
 ALTER TABLE productos ALTER COLUMN nombre_producto TYPE TEXT;
 ALTER TABLE productos ALTER COLUMN categoria TYPE TEXT
--- I have my pc on spanish and location mexico so my type of date is dd/mm/yyyy and the information was i download it has a format mm/dd/yy
--- So i need to change the type of location from my Postgresql
+-- I have my pc on spanish and location mexico so my type of date is dd/mm/yyyy and the information was download it has a format mm/dd/yy
+-- So need to change the type of location from my Postgresql
 SET datestyle TO 'MDY';
 -- If this does not work we need to apply a temporal solution with a temporal column
 ALTER TABLE ventas ADD COLUMN fecha_temp TEXT;
