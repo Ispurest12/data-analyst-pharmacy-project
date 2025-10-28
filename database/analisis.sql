@@ -9,7 +9,16 @@ GROUP BY p.nombre_producto
 ORDER BY total_vendido DESC
 LIMIT 10;
 
-
+-- I try to take incomes per category but category has a generical names like fluoxetine so it's wrong if we want the incomes per category the correct category is antidepressant
+-- And because we have a lot of bad data we can't apply a method like a replacement our data analysis is going to have too many 'other' values
+SELECT
+    p.categoria,
+    SUM(dv.cantidad_vendida * dv.precio_venta_unitario) AS ingresos_totales
+FROM detalle_ventas dv
+JOIN inventario i ON dv.id_lote = i.id_lote
+JOIN productos p ON i.id_producto = p.id
+GROUP BY p.categoria
+ORDER BY ingresos_totales DESC;
 
 -- EXPIRATION DRUG DATA TO NEXT 2 MONTHS
 SELECT
