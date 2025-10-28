@@ -1,7 +1,7 @@
 # data-analyst-pharmacy-project
 ## Project: Analysis of an inventory and sales in a pharmacy
 1. Design a relational database schema (sql)
-2. Generate and load 10,000+ synthetic data records
+2. Generate and load 5000 synthetic data records
 3. Analyse sales and stock patterns using sql complex queries 
 4. Create an interactive dashboard in Tableau
 
