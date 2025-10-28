@@ -14,17 +14,16 @@
 ## Project Structure
 
     ├── database/
-    │   ├── schema.sql       
-    │   ├──── analisis.sql
-        └── etl_y_limpieza.sql 
+    │   ├── schema.sql
+    │   ├── analisis.sql
+    │   └── etl_y_limpieza.sql
     ├── exports/
     │   ├── q1_top_10_selling.csv
-        │── q2_revenue_by_category
     │   ├── q3_expiring_soon.csv
     │   ├── q4_monthly_sales_trend.csv
     │   ├── q5_inventory_value_by_supplier.csv
     │   └── q6_least_10_selling.csv
-    └── README.md            
+    └── README.md        
 
 ## Data Processing (ETL)
 
@@ -52,7 +51,7 @@ The final analysis was conducted using complex SQL queries (saved in the `databa
 * **Top Performers:** The `q1_top_10_selling.csv` analysis revealed that "Loratadine" is the highest-selling product by quantity.
 * **Zero-Sales Products:** The `q6_least_10_selling.csv` analysis (using `LEFT JOIN` and `COALESCE`) identified several products that had zero (0) sales, representing a clear opportunity for inventory reduction.
 * **At-Risk Inventory:** The `q3_expiring_soon.csv` report built a watchlist of products expiring within 60 days, allowing for proactive sales or returns.
-* **Sales Trend:** The `q4_monthly_sales_trend.csv` line chart shows a clear seasonal peak in sales during [January] and [April].
+* **Sales Trend:** The `q4_monthly_sales_trend.csv` line chart shows a clear seasonal peak in sales during January and April.
 * **Inventory Value Concentration:** The `q5_inventory_value_by_supplier` pie chart revealed that the majority of inventory value is concentrated with just a few key suppliers, highlighting critical supplier dependencies.
 * **Category Omission:** The analysis for `q2_revenue_by_category` was intentionally omitted. Upon inspection, the source data in the `categoria` column was found to be low-quality and unreliable, making any category-level analysis misleading.
 
@@ -63,7 +62,7 @@ To replicate this project on your local machine, follow these steps:
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/Ispurest12/data-analyst-pharmacy-project.git](https://github.com/Ispurest12/data-analyst-pharmacy-project.git)
+    git clone https://github.com/Ispurest12/data-analyst-pharmacy-project.git
     cd data-analyst-pharmacy-project
     ```
 
