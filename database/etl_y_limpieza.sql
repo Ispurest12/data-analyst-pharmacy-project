@@ -1,7 +1,7 @@
 -- We need to change the varchar(100) to TEXT because data's Mockaroo has poor information with more than 100 char characters
 ALTER TABLE productos ALTER COLUMN nombre_producto TYPE TEXT;
 ALTER TABLE productos ALTER COLUMN categoria TYPE TEXT
--- I have my pc on spanish and location mexico so my type of date is dd/mm/yyyy and the information was download it has a format mm/dd/yy
+-- My pc is in Spanish and location mexico so my type of date is dd/mm/yyyy and the information I downloaded has a format mm/dd/yy
 -- So need to change the type of location from my Postgresql
 SET datestyle TO 'MDY';
 -- If this does not work we need to apply a temporal solution with a temporal column
@@ -12,7 +12,7 @@ ALTER TABLE ventas ADD COLUMN fecha_temp TEXT;
 UPDATE ventas SET fecha_venta = to_date(fecha_temp, 'MM/DD/YYYY');
 -- Now with the updated column we can drop the temporal column
 ALTER TABLE ventas DROP COLUMN fecha_temp;
--- This method is functionally because the type TEXT can absorb all information no matter what contains
+-- This method is functional because the type TEXT can absorb all information no matter what contains
 -- We need to apply this with inventory because has date too and in this part we have other issue the money's Mockaroo information has a $ symbol
 -- Our database precio its a DECIMAL number not a TEXT(STRING) TYPE of data so need to clean that symbol with REPLACE() METHOD
 -- First need to create a column precio_temp with type data TEXT
